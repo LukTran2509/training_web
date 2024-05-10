@@ -24,6 +24,7 @@ const App = () => {
 
     const {data} = useGetUserQuery(2)
 console.log('sadasdasd', data);
+console.log('ssgsgsgsgsgsg');
   return (
     <div className="App">
       <p style={{ fontSize: "50px", fontWeight: "bold", marginTop: "20px" }}> Hello ReqRes users! </p>
