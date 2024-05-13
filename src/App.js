@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./App.css";
-import { useCreateUserMutation, useGetUserQuery } from "./api";
+import { useGetUserQuery, useCreateUserMutation} from "./api";
 
 const App = () => {
   const { data, isLoading } = useGetUserQuery(2);
@@ -15,11 +15,11 @@ const App = () => {
     avatar: "",
   });
   const [newId, setNewId] = useState(13);
-
-  const handleCreateUser = (e) => {
+  
+  const handleCreateUser = async (e) => {
     e.preventDefault();
     try {
-      const {employees} = createUser({
+      const employees = await createUser({
         id: newId,
         first_name: employee.first_name,
         last_name: employee.last_name,
@@ -89,20 +89,19 @@ const App = () => {
       )}
 
       {isLoading ? (
+        <p> Loading ... </p>
+      ) : (
         <div className="Employee">
-          {data.map((employee) => (
+          {data && data.map((employee) => (
             <div key={employee.id}>
-              <img className="img" src={employee.avatar} alt="" />
-              <p style={{ lineHeight: "1.5", fontWeight: "bold" }}>
-                ID: {employee.id} </p>
+              <img className="img" src={employee.avatar} alt=""/>
+              <p style={{ lineHeight: "1.5", fontWeight: "bold" }}> ID: {employee.id} </p>
               <p> Name: {employee.first_name} {employee.last_name} </p>
               <p> Email: {employee.email} </p>
             </div>
           ))}
         </div>
-      ) : (
-        <p>Loading posts...</p>
-      )}; 
+      )}
     </div>
   );
 };
