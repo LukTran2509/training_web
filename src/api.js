@@ -10,7 +10,16 @@ export const userApi = api.injectEndpoints({
           params: { page: page },
         };
       },
+      createUser: builder.mutation({
+        query: (body) => {
+          return {
+            url: '',
+            method: 'POST',
+            body: body
+          }
+        }
+      })
     }),
   }),
 });
-export const { useGetUserQuery } = userApi;
+export const { useGetUserQuery, useCreateUserMutation } = userApi;
