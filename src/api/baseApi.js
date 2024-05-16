@@ -1,10 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://reqres.in/api/",
-  prepareHeaders: (headers, { getState, endpoint }) => {
-    return headers;
-  },
+  baseUrl: "https://reqres.in/api",
 });
 const baseQueryApi = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);

@@ -53,13 +53,15 @@
 }
 
 .Add {
-  margin-bottom: 20px;
-  padding: 5px;
-  font-size: 18px;
+  margin-bottom: 23px;
+  border-radius: 3px;
+  padding: 7.6px;
+  font-size: 16px;
   color: white;
-  align-items: center;
-  background-color: black;
+  background-color: rgb(17, 17, 17);
   cursor: pointer;
+  width: 125px;
+  height: 36px;
 }
 
 .Form {
@@ -89,8 +91,25 @@
 }
 
 .Search {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   width: 35%;
-  height: 25px;
-  text-indent: 27px;
+  height: 28px;
+  text-indent: 30px;
+  font-size: 16px;
+}
+
+.Edit {
+  justify-content: center;
+  align-items: center;
+  line-height: 23px;
+  padding: 20px;
+}
+
+.Button {
+  background-color: rgb(224, 223, 223);
+  color: rgb(34, 32, 32);
+  margin: 4px;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 10px;
 }
